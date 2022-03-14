@@ -52,9 +52,6 @@ function loadBackgrounds() {
 			title: "Live Backgrounds Display " + (i + 1),
 		});
 		win.setBounds(display.bounds);
-		screen.on("display-metrics-changed", () => {
-			win.setBounds(screen.getAllDisplays()[i].bounds);
-		});
 		await win.loadFile(__dirname + "/src/index.html");
 		try {
 			attach(win);
@@ -68,6 +65,10 @@ function loadBackgrounds() {
 		});
 	});
 }
+
+screen.on("display-metrics-changed", () => reloadBackgrounds());
+screen.on("display-added", () => reloadBackgrounds());
+screen.on("display-removed", () => reloadBackgrounds());
 
 ipcMain.on("updateSettings", function (_, Settings) {
 	fs.writeFileSync(
