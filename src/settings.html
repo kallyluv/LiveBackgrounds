@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+	<title>Live Backgrounds Configuration</title>
+	<link rel="stylesheet" href="settings.css" />
+</head>
+<titlebar> Live Backgrounds Configuration </titlebar>
+<body>
+	<button id="close">X</button>
+	<main>
+		<div class="option" id="timeBetweenChanges">
+			<span id="label">Time Between Changes</span
+			><input
+				type="number"
+				onchange="this.value = Math.round(this.value)"
+				onkeyup="this.value = Math.round(this.value)"
+				id="value"
+			/>
+		</div>
+		<div class="option" id="finishBeforeNext">
+			<span id="label">Finish Current Before Next</span>
+			<input type="checkbox" id="value" />
+		</div>
+		<div class="option" id="openFolder">
+			<button id="value" onclick="openFolderLocation()">
+				Open Wallpapers Folder
+			</button>
+		</div>
+		<button id="save">Save</button>
+	</main>
+</body>
+<script src="../settings.js"></script>

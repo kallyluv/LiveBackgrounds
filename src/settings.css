@@ -1,0 +1,80 @@
+body {
+	background: #333;
+	margin: 0;
+}
+
+main {
+	position: fixed;
+	top: 40px;
+	overflow: auto;
+	width: calc(100%);
+	height: calc(100% - 65px);
+	padding: 10px;
+}
+
+main .option {
+	color: #ddd;
+	margin-bottom: 10px;
+}
+main .option #label {
+	margin-right: 10px;
+}
+main .option #label::after {
+	content: ":";
+}
+main .option #value[type="checkbox"] {
+	position: relative;
+	top: 2px;
+	left: -5px;
+}
+
+main #save {
+	position: fixed;
+	bottom: 5px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	padding: 10px 25px;
+	background: #555;
+	border-radius: 4px;
+	border: none;
+	color: #eee;
+	cursor: pointer;
+}
+
+main #save:hover {
+	filter: brightness(1.05);
+}
+
+titlebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: calc(100vw - 10px);
+	padding: 10px;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: lighter;
+	-webkit-app-region: drag;
+	pointer-events: none;
+	border-bottom: 1px solid white;
+	text-align: center;
+	z-index: 999;
+}
+
+#close {
+	position: fixed;
+	right: 1px;
+	top: 1px;
+	transform: scaleX(1.15);
+	color: #eee;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 11px 15px;
+	z-index: 0;
+	-webkit-app-region: no-drag;
+}
+
+#close:hover {
+	background: #c00;
+}
